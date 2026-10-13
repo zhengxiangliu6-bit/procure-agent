@@ -1,0 +1,329 @@
+{
+  "started": "2026-10-08T15:29:14.038682+00:00",
+  "model": "glm-5.2",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "dataset": "explicitly synthetic DEMO-MCU parts, not market quotes",
+  "checks": [
+    {
+      "name": "basic_model_call",
+      "status": "passed",
+      "seconds": 6.53,
+      "content": "连接成功",
+      "usage": {
+        "input_tokens": 17,
+        "output_tokens": 93,
+        "total_tokens": 110,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 90
+        }
+      }
+    },
+    {
+      "name": "complete_quote_tool_loop",
+      "status": "passed",
+      "task_id": "d5b6e920fffc4140865d50661e943768",
+      "seconds": 21.66,
+      "model_steps": [
+        {
+          "step": 1,
+          "usage": {
+            "input_tokens": 340,
+            "output_tokens": 40,
+            "total_tokens": 380,
+            "input_token_details": {
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "reasoning": 28
+            }
+          }
+        },
+        {
+          "step": 2,
+          "usage": {
+            "input_tokens": 741,
+            "output_tokens": 542,
+            "total_tokens": 1283,
+            "input_token_details": {
+              "cache_read": 256
+            },
+            "output_token_details": {
+              "reasoning": 390
+            }
+          }
+        },
+        {
+          "step": 3,
+          "usage": {
+            "input_tokens": 1635,
+            "output_tokens": 792,
+            "total_tokens": 2427,
+            "input_token_details": {
+              "cache_read": 512
+            },
+            "output_token_details": {
+              "reasoning": 365
+            }
+          }
+        }
+      ],
+      "tools": [
+        "read_quotes",
+        "search_specs",
+        "search_specs",
+        "search_specs",
+        "calculate_cost",
+        "calculate_cost",
+        "calculate_cost"
+      ],
+      "analysis": "## 核验结果\n\n**采购需求：** DEMO-MCU-A | 500件 | 交期≤14天 | -40~85°C | LQFP-48 | CNY\n\n---\n\n### 报价对比\n\n| 项目 | q1 供应商A | q2 供应商B | q3 供应商C |\n|---|---|---|---|\n| 型号 | DEMO-MCU-A ✅ | DEMO-MCU-A ✅ | DEMO-MCU-B ❌ |\n| 封装/温度 | LQFP-48 / -40~85°C ✅ | LQFP-48 / -40~85°C ✅ | QFN-32 / 0~70°C ❌ |\n| 交期 | 10天 ✅ | 12天 ✅ | 7天 ✅ |\n| 含税总价 | **1,195.00 CNY** | **1,201.50 CNY** | 900.00 CNY（不合格） |\n\n### 关键发现\n\n1. **q1、q2** — 型号一致，规格经文档 `demo-a` 核验，封装与温度均满足需求，交期合格。\n2. **q3** — 型号为 DEMO-MCU-B，与需求不同；经文档 `demo-b` 核验，封装为 QFN-32（非 LQFP-48）、温度 0~70°C（非 -40~85°C），**规格不满足，不可替代**。虽总价最低但已排除。\n3. **q1 vs q2** — q1 总价 1,195.00 元（含税含运），比 q2 的 1,201.50 元低 6.50 元，且交期更短（10天 vs 12天）。\n\n### 结论\n\n合格报价中，**q1（供应商A）总价最低、交期最优**，为推荐选项。q3 因型号及规格均不匹配，不予采纳。",
+      "report": {
+        "rows": [
+          {
+            "id": "q1",
+            "supplier": "模拟供应商 A",
+            "model": "DEMO-MCU-A",
+            "price": "2.35",
+            "price_unit": 1,
+            "moq": 1,
+            "lead_days": 10,
+            "tax_included": true,
+            "tax_rate": null,
+            "shipping": "20",
+            "currency": "CNY",
+            "source": "人工录入",
+            "cost": {
+              "subtotal": "1175.00",
+              "tax": "0.00",
+              "shipping": "20.00",
+              "total": "1195.00",
+              "currency": "CNY",
+              "formula": "2.35 × 500 / 1 + 税费 0.00 + 运费 20.00",
+              "tax_note": "单价已含税"
+            },
+            "status": "满足",
+            "reasons": [],
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 1.3005
+              }
+            ],
+            "spec_note": "原型号封装与温度条件已核验。"
+          },
+          {
+            "id": "q2",
+            "supplier": "模拟供应商 B",
+            "model": "DEMO-MCU-A",
+            "price": "210",
+            "price_unit": 100,
+            "moq": 1,
+            "lead_days": 12,
+            "tax_included": false,
+            "tax_rate": "0.13",
+            "shipping": "15",
+            "currency": "CNY",
+            "source": "人工录入",
+            "cost": {
+              "subtotal": "1050.00",
+              "tax": "136.50",
+              "shipping": "15.00",
+              "total": "1201.50",
+              "currency": "CNY",
+              "formula": "210 × 500 / 100 + 税费 136.50 + 运费 15.00",
+              "tax_note": "未税单价，税率 0.13"
+            },
+            "status": "满足",
+            "reasons": [],
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 1.3005
+              }
+            ],
+            "spec_note": "原型号封装与温度条件已核验。"
+          },
+          {
+            "id": "q3",
+            "supplier": "模拟供应商 C",
+            "model": "DEMO-MCU-B",
+            "price": "1.80",
+            "price_unit": 1,
+            "moq": 1,
+            "lead_days": 7,
+            "tax_included": true,
+            "tax_rate": null,
+            "shipping": "0",
+            "currency": "CNY",
+            "source": "人工录入",
+            "cost": {
+              "subtotal": "900.00",
+              "tax": "0.00",
+              "shipping": "0.00",
+              "total": "900.00",
+              "currency": "CNY",
+              "formula": "1.80 × 500 / 1 + 税费 0.00 + 运费 0.00",
+              "tax_note": "单价已含税"
+            },
+            "status": "不满足",
+            "reasons": [
+              "规格证据不满足需求，禁止作为等价型号推荐。"
+            ],
+            "evidence": [
+              {
+                "id": "demo-b",
+                "title": "DEMO-MCU-B 模拟规格书",
+                "models": [
+                  "DEMO-MCU-B"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "QFN-32",
+                  "min_temp": 0,
+                  "max_temp": 70
+                },
+                "text": "DEMO-MCU-B 模拟元器件。封装 QFN-32。工作温度 0 至 70 摄氏度。不满足 DEMO-MCU-A 的 LQFP-48 封装和 -40 至 85 摄氏度要求。",
+                "score": 1.3762
+              }
+            ],
+            "spec_note": "检索到的规格不满足封装或温度要求。"
+          }
+        ],
+        "recommended_id": "q1",
+        "recommendation": "在已核验且满足条件的报价中，模拟供应商 A总成本最低。",
+        "scope": "仅比较报价成本与当前明确要求；未评估供应商信用、真伪与完整电气替代性。",
+        "demo": true
+      }
+    },
+    {
+      "name": "unknown_specs_no_recommendation",
+      "status": "passed",
+      "task_id": "b5fa6a7a02344cc78c54db67be808484",
+      "seconds": 13.83,
+      "model_steps": [
+        {
+          "step": 1,
+          "usage": {
+            "input_tokens": 340,
+            "output_tokens": 48,
+            "total_tokens": 388,
+            "input_token_details": {
+              "cache_read": 256
+            },
+            "output_token_details": {
+              "reasoning": 34
+            }
+          }
+        },
+        {
+          "step": 2,
+          "usage": {
+            "input_tokens": 510,
+            "output_tokens": 280,
+            "total_tokens": 790,
+            "input_token_details": {
+              "cache_read": 256
+            },
+            "output_token_details": {
+              "reasoning": 197
+            }
+          }
+        },
+        {
+          "step": 3,
+          "usage": {
+            "input_tokens": 706,
+            "output_tokens": 631,
+            "total_tokens": 1337,
+            "input_token_details": {
+              "cache_read": 256
+            },
+            "output_token_details": {
+              "reasoning": 229
+            }
+          }
+        }
+      ],
+      "tools": [
+        "read_quotes",
+        "search_specs",
+        "calculate_cost"
+      ],
+      "analysis": "## 核验结果\n\n### 需求摘要\n| 项目 | 内容 |\n|------|------|\n| 型号 | UNKNOWN-PART |\n| 数量 | 500 件 |\n| 交期要求 | ≤14 天 |\n| 温度范围 | -40°C ~ 85°C |\n| 封装 | LQFP-48 |\n| 币种 | CNY |\n\n### 报价 q1（模拟供应商 D）\n| 项目 | 内容 |\n|------|------|\n| 型号 | UNKNOWN-PART |\n| 单价 | ¥1.00 / 件 |\n| MOQ | 1（满足 500 件需求） |\n| 交期 | 5 天（满足 ≤14 天要求） |\n| 税费 | 单价已含税 |\n| 运费 | ¥0.00 |\n| **总价** | **¥500.00**（公式：1.0 × 500 + 税费 0 + 运费 0） |\n\n### 规格核验\n- **未找到任何结构化规格依据**（`search_specs` 返回 `compatible: null`，无文档命中）。\n- 因此，温度范围（-40~85°C）和封装（LQFP-48）**无法通过文档证据确认**，需人工核验。\n\n### 待关注事项\n1. **型号为 \"UNKNOWN-PART\"**，非真实料号，无法进行型号匹配或电气等效判断。\n2. **缺少规格证据**：温度、封装等关键参数无文档支撑，当前不具备自动放行条件。\n3. 交期、MOQ、价格计算方面无异常。\n\n> **结论**：报价在交期、数量、成本上满足需求，但因型号未明确且无规格文档佐证，**规格兼容性无法确认，需人工补充真实型号及规格资料后再行核验**。",
+      "report": {
+        "rows": [
+          {
+            "id": "q1",
+            "supplier": "模拟供应商 D",
+            "model": "UNKNOWN-PART",
+            "price": "1.0",
+            "price_unit": 1,
+            "moq": 1,
+            "lead_days": 5,
+            "tax_included": true,
+            "tax_rate": null,
+            "shipping": "0",
+            "currency": "CNY",
+            "source": "人工录入",
+            "cost": {
+              "subtotal": "500.00",
+              "tax": "0.00",
+              "shipping": "0.00",
+              "total": "500.00",
+              "currency": "CNY",
+              "formula": "1.0 × 500 / 1 + 税费 0.00 + 运费 0.00",
+              "tax_note": "单价已含税"
+            },
+            "status": "待确认",
+            "reasons": [],
+            "evidence": [],
+            "spec_note": "缺少结构化规格依据，需人工核验。"
+          }
+        ],
+        "recommended_id": null,
+        "recommendation": "暂无可推荐报价，需要补充资料或重新询价。",
+        "scope": "仅比较报价成本与当前明确要求；未评估供应商信用、真伪与完整电气替代性。",
+        "demo": false
+      }
+    },
+    {
+      "name": "clarification_resume_real_model",
+      "status": "passed",
+      "task_id": "af6175e5c2084cf1999da4e89321cee2",
+      "analysis": "## 采购核验结果\n\n**需求：** DEMO-MCU-A | 500件 | 交期≤14天 | CNY | 温度 -40~85°C | 封装 LQFP-48\n\n---\n\n### 报价对比\n\n| 项目 | q1 青禾电子 | q2 远川科技 | q3 星野元件 |\n|---|---|---|---|\n| 型号 | DEMO-MCU-A ✅ | DEMO-MCU-A ✅ | DEMO-MCU-B ❌ |\n| 封装/温度 | LQFP-48 / -40~85°C ✅ | LQFP-48 / -40~85°C ✅ | QFN-32 / 0~70°C ❌ |\n| 交期 | 10天 ✅ | 12天 ✅ | 7天 ✅ |\n| 含税总价 | **¥1,195.00** | **¥1,201.50** | ¥900.00（不合格） |\n| 规格依据 | 文档 demo-a | 文档 demo-a | 文档 demo-b |\n\n### 核验结论\n\n1. **q3（星野元件）不合格** — 型号为 DEMO-MCU-B，与需求不同；规格书（文档 demo-b）显示封装 QFN-32、温度 0~70°C，均不满足 LQFP-48 和 -40~85°C 的要求，不可替代。\n\n2. **q1、q2 均合格** — 型号一致，规格经文档 demo-a 核验通过，交期均在14天内。\n\n3. **成本最低为 q1（青禾电子）**，含税含运总价 ¥1,195.00，较 q2（¥1,201.50）低 ¥6.50。\n\n> 以上为可核验的发现，不构成采购指令。"
+    }
+  ],
+  "issues": [],
+  "finished": "2026-10-08T15:30:11.786188+00:00"
+}

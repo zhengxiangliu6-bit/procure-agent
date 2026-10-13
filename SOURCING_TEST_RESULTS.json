@@ -1,0 +1,1429 @@
+[
+  {
+    "name": "stock_split",
+    "status": "passed",
+    "task_id": "883bcb27d5d2457780839930ed6842e6",
+    "seconds": 26.94,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "request_quote",
+      "inspect_offer",
+      "inspect_offer",
+      "evaluate_plan",
+      "finish_sourcing"
+    ],
+    "decisions": [],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "solved",
+      "recommendation": "已找到满足目标的方案：500 个，总成本 ¥1162.00，最长交期 10 天。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": {
+        "feasible": true,
+        "reasons": [],
+        "allocations": [
+          {
+            "offer_id": "green-a",
+            "supplier": "青禾电子（模拟）",
+            "model": "DEMO-MCU-A",
+            "quantity": 280,
+            "stock": 280,
+            "lead_days": 8,
+            "cost": {
+              "subtotal": "616.00",
+              "tax": "0.00",
+              "shipping": "20.00",
+              "total": "636.00",
+              "currency": "CNY",
+              "formula": "2.20 × 280 / 1 + 税费 0.00 + 运费 20.00",
+              "tax_note": "单价已含税"
+            },
+            "source": "模拟供应商接口 / stockout / green-a",
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 0.8043
+              }
+            ]
+          },
+          {
+            "offer_id": "river-a",
+            "supplier": "远川科技（模拟）",
+            "model": "DEMO-MCU-A",
+            "quantity": 220,
+            "stock": 260,
+            "lead_days": 10,
+            "cost": {
+              "subtotal": "506.00",
+              "tax": "0.00",
+              "shipping": "20.00",
+              "total": "526.00",
+              "currency": "CNY",
+              "formula": "2.30 × 220 / 1 + 税费 0.00 + 运费 20.00",
+              "tax_note": "单价已含税"
+            },
+            "source": "模拟供应商接口 / stockout / river-a",
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 0.8043
+              }
+            ]
+          }
+        ],
+        "total": "1162.00",
+        "budget": "1300",
+        "remaining_budget": "138.00",
+        "quantity": 500,
+        "max_lead_days": 10,
+        "id": "plan-1"
+      },
+      "evaluations": [
+        {
+          "feasible": true,
+          "reasons": [],
+          "allocations": [
+            {
+              "offer_id": "green-a",
+              "supplier": "青禾电子（模拟）",
+              "model": "DEMO-MCU-A",
+              "quantity": 280,
+              "stock": 280,
+              "lead_days": 8,
+              "cost": {
+                "subtotal": "616.00",
+                "tax": "0.00",
+                "shipping": "20.00",
+                "total": "636.00",
+                "currency": "CNY",
+                "formula": "2.20 × 280 / 1 + 税费 0.00 + 运费 20.00",
+                "tax_note": "单价已含税"
+              },
+              "source": "模拟供应商接口 / stockout / green-a",
+              "evidence": [
+                {
+                  "id": "demo-a",
+                  "title": "DEMO-MCU-A 模拟规格书",
+                  "models": [
+                    "DEMO-MCU-A"
+                  ],
+                  "page": 1,
+                  "chunk": 0,
+                  "demo": true,
+                  "specs": {
+                    "package": "LQFP-48",
+                    "min_temp": -40,
+                    "max_temp": 85
+                  },
+                  "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                  "score": 0.8043
+                }
+              ]
+            },
+            {
+              "offer_id": "river-a",
+              "supplier": "远川科技（模拟）",
+              "model": "DEMO-MCU-A",
+              "quantity": 220,
+              "stock": 260,
+              "lead_days": 10,
+              "cost": {
+                "subtotal": "506.00",
+                "tax": "0.00",
+                "shipping": "20.00",
+                "total": "526.00",
+                "currency": "CNY",
+                "formula": "2.30 × 220 / 1 + 税费 0.00 + 运费 20.00",
+                "tax_note": "单价已含税"
+              },
+              "source": "模拟供应商接口 / stockout / river-a",
+              "evidence": [
+                {
+                  "id": "demo-a",
+                  "title": "DEMO-MCU-A 模拟规格书",
+                  "models": [
+                    "DEMO-MCU-A"
+                  ],
+                  "page": 1,
+                  "chunk": 0,
+                  "demo": true,
+                  "specs": {
+                    "package": "LQFP-48",
+                    "min_temp": -40,
+                    "max_temp": 85
+                  },
+                  "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                  "score": 0.8043
+                }
+              ]
+            }
+          ],
+          "total": "1162.00",
+          "budget": "1300",
+          "remaining_budget": "138.00",
+          "quantity": 500,
+          "max_lead_days": 10,
+          "id": "plan-1"
+        }
+      ],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.20",
+          "stock": 280,
+          "lead_days": 8,
+          "moq": 50,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / stockout / green-a",
+          "requested_quantity": 280,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        },
+        {
+          "id": "river-a",
+          "supplier_id": "river",
+          "supplier": "远川科技（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.30",
+          "stock": 260,
+          "lead_days": 10,
+          "moq": 50,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / stockout / river-a",
+          "requested_quantity": 220,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1300",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购方案已验证通过，使用原型号 DEMO-MCU-A 拆单采购，无需替代。\n\n【方案明细】\n- 青禾电子：280 个 × 2.20元 + 运费20元 = 636元，交期8天\n- 远川科技：220 个 × 2.30元 + 运费20元 = 526元，交期10天\n- 合计：500 个，总成本 1162 元（预算1300元，剩余138元）\n- 最长交期：10天（≤14天）\n- 规格：LQFP-48 封装，工作温度 -40~85°C，与要求完全一致\n\n方案ID：plan-1",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1073,
+        "output_tokens": 52,
+        "total_tokens": 1125,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 16
+        }
+      },
+      {
+        "input_tokens": 1270,
+        "output_tokens": 270,
+        "total_tokens": 1540,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 173
+        }
+      },
+      {
+        "input_tokens": 1640,
+        "output_tokens": 315,
+        "total_tokens": 1955,
+        "input_token_details": {
+          "cache_read": 1152
+        },
+        "output_token_details": {
+          "reasoning": 170
+        }
+      },
+      {
+        "input_tokens": 2162,
+        "output_tokens": 160,
+        "total_tokens": 2322,
+        "input_token_details": {
+          "cache_read": 1536
+        },
+        "output_token_details": {
+          "reasoning": 77
+        }
+      },
+      {
+        "input_tokens": 2879,
+        "output_tokens": 290,
+        "total_tokens": 3169,
+        "input_token_details": {
+          "cache_read": 2048
+        },
+        "output_token_details": {
+          "reasoning": 104
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing_goal",
+    "status": "passed",
+    "task_id": "b9ca0c9a79894b4eaf89525772d1ed52",
+    "seconds": 29.94,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "request_quote",
+      "inspect_offer",
+      "evaluate_plan",
+      "finish_sourcing"
+    ],
+    "decisions": [
+      {
+        "request": {
+          "type": "goal_clarification",
+          "title": "采购目标还缺少必要条件",
+          "reason": "先明确这些条件，Agent 才能判断方案是否满足目标。",
+          "questions": [
+            {
+              "field": "budget",
+              "label": "总预算（元）",
+              "input": "number"
+            }
+          ]
+        },
+        "answers": {
+          "budget": "1300"
+        }
+      }
+    ],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "solved",
+      "recommendation": "已找到满足目标的方案：500 个，总成本 ¥1195.00，最长交期 10 天。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": {
+        "feasible": true,
+        "reasons": [],
+        "allocations": [
+          {
+            "offer_id": "green-a",
+            "supplier": "青禾电子（模拟）",
+            "model": "DEMO-MCU-A",
+            "quantity": 500,
+            "stock": 600,
+            "lead_days": 10,
+            "cost": {
+              "subtotal": "1175.00",
+              "tax": "0.00",
+              "shipping": "20.00",
+              "total": "1195.00",
+              "currency": "CNY",
+              "formula": "2.35 × 500 / 1 + 税费 0.00 + 运费 20.00",
+              "tax_note": "单价已含税"
+            },
+            "source": "模拟供应商接口 / balanced / green-a",
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 0.8043
+              }
+            ]
+          }
+        ],
+        "total": "1195.00",
+        "budget": "1300",
+        "remaining_budget": "105.00",
+        "quantity": 500,
+        "max_lead_days": 10,
+        "id": "plan-1"
+      },
+      "evaluations": [
+        {
+          "feasible": true,
+          "reasons": [],
+          "allocations": [
+            {
+              "offer_id": "green-a",
+              "supplier": "青禾电子（模拟）",
+              "model": "DEMO-MCU-A",
+              "quantity": 500,
+              "stock": 600,
+              "lead_days": 10,
+              "cost": {
+                "subtotal": "1175.00",
+                "tax": "0.00",
+                "shipping": "20.00",
+                "total": "1195.00",
+                "currency": "CNY",
+                "formula": "2.35 × 500 / 1 + 税费 0.00 + 运费 20.00",
+                "tax_note": "单价已含税"
+              },
+              "source": "模拟供应商接口 / balanced / green-a",
+              "evidence": [
+                {
+                  "id": "demo-a",
+                  "title": "DEMO-MCU-A 模拟规格书",
+                  "models": [
+                    "DEMO-MCU-A"
+                  ],
+                  "page": 1,
+                  "chunk": 0,
+                  "demo": true,
+                  "specs": {
+                    "package": "LQFP-48",
+                    "min_temp": -40,
+                    "max_temp": 85
+                  },
+                  "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                  "score": 0.8043
+                }
+              ]
+            }
+          ],
+          "total": "1195.00",
+          "budget": "1300",
+          "remaining_budget": "105.00",
+          "quantity": 500,
+          "max_lead_days": 10,
+          "id": "plan-1"
+        }
+      ],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.35",
+          "stock": 600,
+          "lead_days": 10,
+          "moq": 1,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / balanced / green-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        },
+        {
+          "id": "fast-a",
+          "supplier_id": "fast",
+          "supplier": "迅达元件（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.70",
+          "stock": 800,
+          "lead_days": 3,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / balanced / fast-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1300",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购方案已确认：\n\n- 供应商：青禾电子（模拟）\n- 型号：DEMO-MCU-A（原型号）\n- 数量：500 个\n- 单价：2.35 元（含税）\n- 货款：1175.00 元\n- 运费：20.00 元\n- 总成本：1195.00 元（预算 1300，剩余 105 元）\n- 交期：10 天（要求 14 天内）\n- 库存：600 ≥ 500，MOQ 1 ≤ 500\n- 规格核验：封装 LQFP-48，温度 -40~85°C，完全匹配\n\n方案 ID：plan-1，已通过全部约束验证。",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1056,
+        "output_tokens": 61,
+        "total_tokens": 1117,
+        "input_token_details": {
+          "cache_read": 768
+        },
+        "output_token_details": {
+          "reasoning": 17
+        }
+      },
+      {
+        "input_tokens": 1310,
+        "output_tokens": 278,
+        "total_tokens": 1588,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 169
+        }
+      },
+      {
+        "input_tokens": 1690,
+        "output_tokens": 455,
+        "total_tokens": 2145,
+        "input_token_details": {
+          "cache_read": 1280
+        },
+        "output_token_details": {
+          "reasoning": 288
+        }
+      },
+      {
+        "input_tokens": 2047,
+        "output_tokens": 142,
+        "total_tokens": 2189,
+        "input_token_details": {
+          "cache_read": 1536
+        },
+        "output_token_details": {
+          "reasoning": 75
+        }
+      },
+      {
+        "input_tokens": 2464,
+        "output_tokens": 292,
+        "total_tokens": 2756,
+        "input_token_details": {
+          "cache_read": 1920
+        },
+        "output_token_details": {
+          "reasoning": 101
+        }
+      }
+    ]
+  },
+  {
+    "name": "normal",
+    "status": "passed",
+    "task_id": "353735c675924940b0207ac33f0ec073",
+    "seconds": 34.5,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "request_quote",
+      "inspect_offer",
+      "evaluate_plan",
+      "finish_sourcing"
+    ],
+    "decisions": [],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "solved",
+      "recommendation": "已找到满足目标的方案：500 个，总成本 ¥1195.00，最长交期 10 天。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": {
+        "feasible": true,
+        "reasons": [],
+        "allocations": [
+          {
+            "offer_id": "green-a",
+            "supplier": "青禾电子（模拟）",
+            "model": "DEMO-MCU-A",
+            "quantity": 500,
+            "stock": 600,
+            "lead_days": 10,
+            "cost": {
+              "subtotal": "1175.00",
+              "tax": "0.00",
+              "shipping": "20.00",
+              "total": "1195.00",
+              "currency": "CNY",
+              "formula": "2.35 × 500 / 1 + 税费 0.00 + 运费 20.00",
+              "tax_note": "单价已含税"
+            },
+            "source": "模拟供应商接口 / balanced / green-a",
+            "evidence": [
+              {
+                "id": "demo-a",
+                "title": "DEMO-MCU-A 模拟规格书",
+                "models": [
+                  "DEMO-MCU-A"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85
+                },
+                "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                "score": 0.8043
+              }
+            ]
+          }
+        ],
+        "total": "1195.00",
+        "budget": "1300",
+        "remaining_budget": "105.00",
+        "quantity": 500,
+        "max_lead_days": 10,
+        "id": "plan-1"
+      },
+      "evaluations": [
+        {
+          "feasible": true,
+          "reasons": [],
+          "allocations": [
+            {
+              "offer_id": "green-a",
+              "supplier": "青禾电子（模拟）",
+              "model": "DEMO-MCU-A",
+              "quantity": 500,
+              "stock": 600,
+              "lead_days": 10,
+              "cost": {
+                "subtotal": "1175.00",
+                "tax": "0.00",
+                "shipping": "20.00",
+                "total": "1195.00",
+                "currency": "CNY",
+                "formula": "2.35 × 500 / 1 + 税费 0.00 + 运费 20.00",
+                "tax_note": "单价已含税"
+              },
+              "source": "模拟供应商接口 / balanced / green-a",
+              "evidence": [
+                {
+                  "id": "demo-a",
+                  "title": "DEMO-MCU-A 模拟规格书",
+                  "models": [
+                    "DEMO-MCU-A"
+                  ],
+                  "page": 1,
+                  "chunk": 0,
+                  "demo": true,
+                  "specs": {
+                    "package": "LQFP-48",
+                    "min_temp": -40,
+                    "max_temp": 85
+                  },
+                  "text": "DEMO-MCU-A 模拟元器件。封装 LQFP-48。工作温度 -40 至 85 摄氏度。仅为评估用模拟资料，不代表真实产品。",
+                  "score": 0.8043
+                }
+              ]
+            }
+          ],
+          "total": "1195.00",
+          "budget": "1300",
+          "remaining_budget": "105.00",
+          "quantity": 500,
+          "max_lead_days": 10,
+          "id": "plan-1"
+        }
+      ],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.35",
+          "stock": 600,
+          "lead_days": 10,
+          "moq": 1,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / balanced / green-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        },
+        {
+          "id": "fast-a",
+          "supplier_id": "fast",
+          "supplier": "迅达元件（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.70",
+          "stock": 800,
+          "lead_days": 3,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / balanced / fast-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1300",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购方案已验证通过。\n\n供应商：青禾电子（模拟）\n型号：DEMO-MCU-A（原型号）\n数量：500 个\n单价：¥2.35（含税）\n货款：¥1175.00\n运费：¥20.00\n总价：¥1195.00（预算 ¥1300，剩余 ¥105）\n交期：10 天（要求 14 天内）\n规格：LQFP-48 封装，工作温度 -40~85°C，与需求完全匹配\n\n原型号直接满足所有约束，无需替代。",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1106,
+        "output_tokens": 64,
+        "total_tokens": 1170,
+        "input_token_details": {
+          "cache_read": 896
+        },
+        "output_token_details": {
+          "reasoning": 16
+        }
+      },
+      {
+        "input_tokens": 1364,
+        "output_tokens": 358,
+        "total_tokens": 1722,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 195
+        }
+      },
+      {
+        "input_tokens": 1798,
+        "output_tokens": 163,
+        "total_tokens": 1961,
+        "input_token_details": {
+          "cache_read": 1280
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 2151,
+        "output_tokens": 149,
+        "total_tokens": 2300,
+        "input_token_details": {
+          "cache_read": 1792
+        },
+        "output_token_details": {
+          "reasoning": 75
+        }
+      },
+      {
+        "input_tokens": 2575,
+        "output_tokens": 242,
+        "total_tokens": 2817,
+        "input_token_details": {
+          "cache_read": 2048
+        },
+        "output_token_details": {
+          "reasoning": 95
+        }
+      }
+    ]
+  },
+  {
+    "name": "budget_alternative",
+    "status": "passed",
+    "task_id": "5aefa0ca3e8745edb9ae2520cd759b9f",
+    "seconds": 52.88,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "request_quote",
+      "negotiate_quote",
+      "negotiate_quote",
+      "find_alternatives",
+      "inspect_offer",
+      "search_suppliers",
+      "request_quote",
+      "inspect_offer",
+      "ask_user",
+      "evaluate_plan",
+      "finish_sourcing"
+    ],
+    "decisions": [
+      {
+        "request": {
+          "type": "sourcing_decision",
+          "title": "需要你的决定才能继续",
+          "reason": "原型号 DEMO-MCU-A 最低总价 1320 元（青禾议价后 2.60×500+运费20），超出固定预算 1200 元。候选替代 DEMO-MCU-A2 规格匹配（LQFP-48，-40~85°C），文档声明引脚与电气条件可替代 DEMO-MCU-A，报价 2.05×500+运费25=1050 元，交期 7 天，在预算和交期内。请确认是否允许使用 DEMO-MCU-A2 作为替代型号。",
+          "proposed_value": "DEMO-MCU-A2",
+          "questions": [
+            {
+              "field": "allow_alternatives",
+              "label": "已取得工程确认，可使用 DEMO-MCU-A2？",
+              "input": "boolean"
+            }
+          ]
+        },
+        "answers": {
+          "allow_alternatives": true
+        }
+      }
+    ],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "solved",
+      "recommendation": "已找到满足目标的方案：500 个，总成本 ¥1050.00，最长交期 7 天。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": {
+        "feasible": true,
+        "reasons": [],
+        "allocations": [
+          {
+            "offer_id": "substitute-a2",
+            "supplier": "替代元件供应商（模拟）",
+            "model": "DEMO-MCU-A2",
+            "quantity": 500,
+            "stock": 700,
+            "lead_days": 7,
+            "cost": {
+              "subtotal": "1025.00",
+              "tax": "0.00",
+              "shipping": "25.00",
+              "total": "1050.00",
+              "currency": "CNY",
+              "formula": "2.05 × 500 / 1 + 税费 0.00 + 运费 25.00",
+              "tax_note": "单价已含税"
+            },
+            "source": "模拟供应商接口 / budget / substitute-a2",
+            "evidence": [
+              {
+                "id": "demo-a2",
+                "title": "DEMO-MCU-A2 模拟候选规格书",
+                "models": [
+                  "DEMO-MCU-A2"
+                ],
+                "page": 1,
+                "chunk": 0,
+                "demo": true,
+                "specs": {
+                  "package": "LQFP-48",
+                  "min_temp": -40,
+                  "max_temp": 85,
+                  "equivalent_to": [
+                    "DEMO-MCU-A"
+                  ]
+                },
+                "text": "DEMO-MCU-A2 模拟候选。LQFP-48，-40 至 85 摄氏度；模拟数据声明引脚与电气条件可替代 DEMO-MCU-A，仅用于演示。仍须由采购人员取得工程确认，不能用于真实器件。",
+                "score": 0.8059
+              }
+            ]
+          }
+        ],
+        "total": "1050.00",
+        "budget": "1200",
+        "remaining_budget": "150.00",
+        "quantity": 500,
+        "max_lead_days": 7,
+        "id": "plan-1"
+      },
+      "evaluations": [
+        {
+          "feasible": true,
+          "reasons": [],
+          "allocations": [
+            {
+              "offer_id": "substitute-a2",
+              "supplier": "替代元件供应商（模拟）",
+              "model": "DEMO-MCU-A2",
+              "quantity": 500,
+              "stock": 700,
+              "lead_days": 7,
+              "cost": {
+                "subtotal": "1025.00",
+                "tax": "0.00",
+                "shipping": "25.00",
+                "total": "1050.00",
+                "currency": "CNY",
+                "formula": "2.05 × 500 / 1 + 税费 0.00 + 运费 25.00",
+                "tax_note": "单价已含税"
+              },
+              "source": "模拟供应商接口 / budget / substitute-a2",
+              "evidence": [
+                {
+                  "id": "demo-a2",
+                  "title": "DEMO-MCU-A2 模拟候选规格书",
+                  "models": [
+                    "DEMO-MCU-A2"
+                  ],
+                  "page": 1,
+                  "chunk": 0,
+                  "demo": true,
+                  "specs": {
+                    "package": "LQFP-48",
+                    "min_temp": -40,
+                    "max_temp": 85,
+                    "equivalent_to": [
+                      "DEMO-MCU-A"
+                    ]
+                  },
+                  "text": "DEMO-MCU-A2 模拟候选。LQFP-48，-40 至 85 摄氏度；模拟数据声明引脚与电气条件可替代 DEMO-MCU-A，仅用于演示。仍须由采购人员取得工程确认，不能用于真实器件。",
+                  "score": 0.8059
+                }
+              ]
+            }
+          ],
+          "total": "1050.00",
+          "budget": "1200",
+          "remaining_budget": "150.00",
+          "quantity": 500,
+          "max_lead_days": 7,
+          "id": "plan-1"
+        }
+      ],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.60",
+          "stock": 800,
+          "lead_days": 10,
+          "moq": 500,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / green-a / 模拟议价回复 / 阶梯价至少500个"
+        },
+        {
+          "id": "fast-a",
+          "supplier_id": "fast",
+          "supplier": "迅达元件（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "3.10",
+          "stock": 800,
+          "lead_days": 5,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / fast-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        },
+        {
+          "id": "substitute-a2",
+          "supplier_id": "substitute",
+          "supplier": "替代元件供应商（模拟）",
+          "model": "DEMO-MCU-A2",
+          "price": "2.05",
+          "stock": 700,
+          "lead_days": 7,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / substitute-a2",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1200",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购方案已验证通过。\n\n**最终方案：**\n- 型号：DEMO-MCU-A2（用户工程确认的替代型号，规格 LQFP-48，-40~85°C，文档声明可替代 DEMO-MCU-A）\n- 供应商：替代元件供应商（模拟）\n- 数量：500 个\n- 单价：2.05 元（含税）\n- 运费：25 元\n- **总价：1050 元**（预算 1200 元，剩余 150 元）\n- 交期：7 天（要求 14 天内）\n\n**寻源过程：**\n1. 原型号 DEMO-MCU-A 两家供应商报价均超预算（青禾 1420 元、迅达 1575 元）\n2. 对青禾议价成功（2.80→2.60），但总价 1320 元仍超预算 120 元\n3. 迅达拒绝议价\n4. 查找候选替代 DEMO-MCU-A2，报价 1050 元在预算内\n5. 核验规格匹配，取得用户工程确认\n6. 方案验证通过，plan-1",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1109,
+        "output_tokens": 132,
+        "total_tokens": 1241,
+        "input_token_details": {
+          "cache_read": 768
+        },
+        "output_token_details": {
+          "reasoning": 96
+        }
+      },
+      {
+        "input_tokens": 1256,
+        "output_tokens": 161,
+        "total_tokens": 1417,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 81
+        }
+      },
+      {
+        "input_tokens": 1607,
+        "output_tokens": 363,
+        "total_tokens": 1970,
+        "input_token_details": {
+          "cache_read": 1152
+        },
+        "output_token_details": {
+          "reasoning": 246
+        }
+      },
+      {
+        "input_tokens": 1903,
+        "output_tokens": 207,
+        "total_tokens": 2110,
+        "input_token_details": {
+          "cache_read": 1536
+        },
+        "output_token_details": {
+          "reasoning": 118
+        }
+      },
+      {
+        "input_tokens": 2226,
+        "output_tokens": 209,
+        "total_tokens": 2435,
+        "input_token_details": {
+          "cache_read": 1792
+        },
+        "output_token_details": {
+          "reasoning": 156
+        }
+      },
+      {
+        "input_tokens": 2344,
+        "output_tokens": 46,
+        "total_tokens": 2390,
+        "input_token_details": {
+          "cache_read": 2048
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 2532,
+        "output_tokens": 66,
+        "total_tokens": 2598,
+        "input_token_details": {
+          "cache_read": 2304
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 2827,
+        "output_tokens": 335,
+        "total_tokens": 3162,
+        "input_token_details": {
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "reasoning": 133
+        }
+      },
+      {
+        "input_tokens": 3347,
+        "output_tokens": 136,
+        "total_tokens": 3483,
+        "input_token_details": {
+          "cache_read": 2816
+        },
+        "output_token_details": {
+          "reasoning": 89
+        }
+      },
+      {
+        "input_tokens": 3787,
+        "output_tokens": 319,
+        "total_tokens": 4106,
+        "input_token_details": {
+          "cache_read": 3328
+        },
+        "output_token_details": {
+          "reasoning": 43
+        }
+      }
+    ]
+  },
+  {
+    "name": "reject_alternative",
+    "status": "passed",
+    "task_id": "4d42dac41b3d412289e16fa07ede5dc7",
+    "seconds": 68.67,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "request_quote",
+      "negotiate_quote",
+      "negotiate_quote",
+      "find_alternatives",
+      "search_suppliers",
+      "request_quote",
+      "inspect_offer",
+      "ask_user",
+      "finish_sourcing"
+    ],
+    "decisions": [
+      {
+        "request": {
+          "type": "sourcing_decision",
+          "title": "需要你的决定才能继续",
+          "reason": "原型号 DEMO-MCU-A 两家供应商议价后最低总价 ¥1,320，超出固定预算 ¥1,200。候选替代 DEMO-MCU-A2 规格匹配（LQFP-48，-40~85°C），有文档等价声明，总价 ¥1,050 在预算内，交期7天。需要您确认是否允许使用该替代型号。",
+          "proposed_value": "DEMO-MCU-A2",
+          "questions": [
+            {
+              "field": "allow_alternatives",
+              "label": "已取得工程确认，可使用 DEMO-MCU-A2？",
+              "input": "boolean"
+            }
+          ]
+        },
+        "answers": {
+          "allow_alternatives": false
+        }
+      }
+    ],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "no_solution",
+      "recommendation": "本轮未找到经过工具核验的可执行方案，请查看障碍与行动记录。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": null,
+      "evaluations": [],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "2.60",
+          "stock": 800,
+          "lead_days": 10,
+          "moq": 500,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / green-a / 模拟议价回复 / 阶梯价至少500个"
+        },
+        {
+          "id": "fast-a",
+          "supplier_id": "fast",
+          "supplier": "迅达元件（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "3.10",
+          "stock": 800,
+          "lead_days": 5,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / fast-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        },
+        {
+          "id": "substitute-a2",
+          "supplier_id": "substitute",
+          "supplier": "替代元件供应商（模拟）",
+          "model": "DEMO-MCU-A2",
+          "price": "2.05",
+          "stock": 700,
+          "lead_days": 7,
+          "moq": 1,
+          "shipping": "25",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / budget / substitute-a2",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1200",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购 500 个 DEMO-MCU-A，固定预算 1200 元，14 天内到货——无可行方案。\n\n已尝试：\n1. 搜索原型号供应商：找到青禾电子、迅达元件两家，库存均充足，交期均满足14天。\n2. 议价：青禾电子议价成功，单价 2.80→2.60 元，MOQ 变为 500，总价 1,320 元（超预算 120 元）；迅达元件拒绝降价，总价 1,575 元（超预算 375 元）。\n3. 寻找替代：找到候选 DEMO-MCU-A2，规格匹配（LQFP-48，-40~85°C），有文档等价声明，总价 1,050 元在预算内，交期7天。\n4. 用户确认：用户明确拒绝使用替代型号 DEMO-MCU-A2。\n\n障碍：原型号最低总价 1,320 元超出锁定预算 1,200 元；替代型号被用户拒绝；预算为锁定字段不可调整。无其他供应商或替代型号可用。",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1111,
+        "output_tokens": 148,
+        "total_tokens": 1259,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 112
+        }
+      },
+      {
+        "input_tokens": 1258,
+        "output_tokens": 162,
+        "total_tokens": 1420,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 81
+        }
+      },
+      {
+        "input_tokens": 1610,
+        "output_tokens": 192,
+        "total_tokens": 1802,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 1981,
+        "output_tokens": 215,
+        "total_tokens": 2196,
+        "input_token_details": {
+          "cache_read": 1536
+        },
+        "output_token_details": {
+          "reasoning": 100
+        }
+      },
+      {
+        "input_tokens": 2143,
+        "output_tokens": 114,
+        "total_tokens": 2257,
+        "input_token_details": {
+          "cache_read": 1792
+        },
+        "output_token_details": {
+          "reasoning": 69
+        }
+      },
+      {
+        "input_tokens": 2253,
+        "output_tokens": 47,
+        "total_tokens": 2300,
+        "input_token_details": {
+          "cache_read": 2048
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 2442,
+        "output_tokens": 36,
+        "total_tokens": 2478,
+        "input_token_details": {
+          "cache_read": 2048
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 2707,
+        "output_tokens": 736,
+        "total_tokens": 3443,
+        "input_token_details": {
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "reasoning": 250
+        }
+      },
+      {
+        "input_tokens": 3462,
+        "output_tokens": 1201,
+        "total_tokens": 4663,
+        "input_token_details": {
+          "cache_read": 2688
+        },
+        "output_token_details": {
+          "reasoning": 655
+        }
+      }
+    ]
+  },
+  {
+    "name": "impossible",
+    "status": "passed",
+    "task_id": "f47f5b81a9bc4559b37ed954d315f85e",
+    "seconds": 32.0,
+    "tools": [
+      "search_suppliers",
+      "request_quote",
+      "inspect_offer",
+      "negotiate_quote",
+      "find_alternatives",
+      "search_suppliers",
+      "finish_sourcing"
+    ],
+    "decisions": [],
+    "report": {
+      "kind": "sourcing",
+      "outcome": "no_solution",
+      "recommendation": "本轮未找到经过工具核验的可执行方案，请查看障碍与行动记录。",
+      "scope": "价格、库存、议价回复和替代关系均为模拟数据；未联系真实供应商。",
+      "plan": null,
+      "evaluations": [],
+      "offers": [
+        {
+          "id": "green-a",
+          "supplier_id": "green",
+          "supplier": "青禾电子（模拟）",
+          "model": "DEMO-MCU-A",
+          "price": "3.50",
+          "stock": 700,
+          "lead_days": 10,
+          "moq": 1,
+          "shipping": "20",
+          "price_unit": 1,
+          "tax_included": true,
+          "currency": "CNY",
+          "source": "模拟供应商接口 / impossible / green-a",
+          "requested_quantity": 500,
+          "quote_notice": "库存为有限数量；本报价不会预留库存，不是实际采购承诺。"
+        }
+      ],
+      "constraints": {
+        "model": "DEMO-MCU-A",
+        "quantity": 500,
+        "budget": "1300",
+        "max_lead_days": 14,
+        "package": "LQFP-48",
+        "min_temp": -40,
+        "max_temp": 85
+      },
+      "analysis": "采购目标：500 个 DEMO-MCU-A，预算 1300 元，14 天内到货。\n\n已尝试方案及障碍：\n1. 原型号供应商青禾电子：库存 700（充足）、交期 10 天（满足）、MOQ 1（满足）、规格 LQFP-48 / -40~85°C（完全匹配）。但单价 3.50 元 × 500 = 1750 元 + 运费 20 元 = 1770 元，超出固定预算 1300 元（超 470 元）。\n2. 协商折扣：已向青禾电子请求数量折扣，被拒绝，无可用阶梯折扣。\n3. 替代型号 DEMO-MCU-B：find_alternatives 返回候选但封装不一致，且 search_suppliers 查无任何供应商，无法获取报价。\n4. 另一原型号供应商交期 35 天，远超 14 天限制，不可用。\n\n结论：14 天交期内仅有青禾电子一家可用，其最低总成本 1770 元超出固定预算 1300 元，无法满足采购条件。预算为锁定字段，未请求修改。",
+      "rows": []
+    },
+    "model_usage": [
+      {
+        "input_tokens": 1104,
+        "output_tokens": 109,
+        "total_tokens": 1213,
+        "input_token_details": {
+          "cache_read": 896
+        },
+        "output_token_details": {
+          "reasoning": 73
+        }
+      },
+      {
+        "input_tokens": 1253,
+        "output_tokens": 192,
+        "total_tokens": 1445,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 127
+        }
+      },
+      {
+        "input_tokens": 1455,
+        "output_tokens": 82,
+        "total_tokens": 1537,
+        "input_token_details": {
+          "cache_read": 1024
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      },
+      {
+        "input_tokens": 1750,
+        "output_tokens": 356,
+        "total_tokens": 2106,
+        "input_token_details": {
+          "cache_read": 1280
+        },
+        "output_token_details": {
+          "reasoning": 290
+        }
+      },
+      {
+        "input_tokens": 1856,
+        "output_tokens": 119,
+        "total_tokens": 1975,
+        "input_token_details": {
+          "cache_read": 1664
+        },
+        "output_token_details": {
+          "reasoning": 75
+        }
+      },
+      {
+        "input_tokens": 1916,
+        "output_tokens": 401,
+        "total_tokens": 2317,
+        "input_token_details": {
+          "cache_read": 1792
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      }
+    ]
+  }
+]

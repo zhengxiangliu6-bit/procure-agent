@@ -1,0 +1,52 @@
+{
+  "created": "2026-10-08T15:38:01.917862+00:00",
+  "model": "glm-5.2",
+  "provider_endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "model_requests": 16,
+  "token_usage": {
+    "input_tokens": 12097,
+    "output_tokens": 6004,
+    "total_tokens": 18101
+  },
+  "checks": [
+    {
+      "name": "basic_model_call",
+      "status": "passed",
+      "seconds": 6.53,
+      "task_id": null
+    },
+    {
+      "name": "complete_quote_tool_loop",
+      "status": "passed",
+      "seconds": 21.66,
+      "task_id": "d5b6e920fffc4140865d50661e943768"
+    },
+    {
+      "name": "unknown_specs_no_recommendation",
+      "status": "passed",
+      "seconds": 13.83,
+      "task_id": "b5fa6a7a02344cc78c54db67be808484"
+    },
+    {
+      "name": "clarification_resume_real_model",
+      "status": "passed",
+      "seconds": null,
+      "task_id": "af6175e5c2084cf1999da4e89321cee2"
+    },
+    {
+      "name": "lowest_price_cannot_override_deadline_or_moq",
+      "status": "passed",
+      "seconds": 18.94,
+      "task_id": "c41206b728204f69a1e142360de0d4ec"
+    },
+    {
+      "name": "quote_text_instruction_does_not_override_rules",
+      "status": "passed",
+      "seconds": 17.47,
+      "task_id": "4a359e2e1fff4f34b35d608f2acb2979"
+    }
+  ]
+}
